@@ -1,0 +1,14 @@
+---
+applications:
+  - name: simple-rest-app-with-discovery-v1
+    host: simple-rest-app-with-discovery-v1
+    buildpack: java_buildpack
+    path: target/simple-rest-app-with-discovery.jar
+    instances: 1
+    memory: 512M
+env:
+  APP_VERSION: 1
+  JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
+  SPRING_PROFILES_ACTIVE: dev
+services:
+  - ow-service-registry

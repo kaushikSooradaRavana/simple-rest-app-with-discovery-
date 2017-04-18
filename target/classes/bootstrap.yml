@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: simple-rest-app-with-discovery
+    description: A simple REST service application using service discovery
+    version: "@project.version@"
+    majorVersion: ${APP_VERSION:1}
+eureka:
+  instance:
+    appname: ${spring.application.name}-v${spring.application.majorVersion}
+    virtualHostName: ${spring.application.name}-v${spring.application.majorVersion}
+    securePortEnabled: false

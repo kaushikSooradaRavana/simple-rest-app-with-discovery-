@@ -1,0 +1,51 @@
+{
+	"id": "b100846c-a3c4-24c6-8ba9-30a85fea2a22",
+	"name": "ow-mbusa-samples",
+	"description": "",
+	"order": [
+		"7d3ef2ca-8cac-cacf-f200-63fea20fb333",
+		"3d3dbb75-fe83-6d55-3cb9-a8a20a2da30c"
+	],
+	"folders": [],
+	"timestamp": 1486373691571,
+	"owner": "462663",
+	"public": false,
+	"requests": [
+		{
+			"id": "3d3dbb75-fe83-6d55-3cb9-a8a20a2da30c",
+			"headers": "",
+			"url": "{{base-url}}/v1/proxy/hello/MBUSA",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Response status is OK\"] = responseCode.code === 200;\n\ntests[\"Body contains greeting\"] = responseBody.has(\"Guten Tag\");\n\ntests[\"Body contains name\"] = responseBody.has(\"MBUSA\");\n\ntests[\"Content-Type header is present\"] = postman.getResponseHeader(\"Content-Type\");\n\ntests[\"Content-Type is text/plain\"] = postman.getResponseHeader(\"Content-Type\").has(\"text/plain\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486980746201,
+			"name": "Say hello proxied",
+			"description": "",
+			"collectionId": "b100846c-a3c4-24c6-8ba9-30a85fea2a22",
+			"responses": []
+		},
+		{
+			"id": "7d3ef2ca-8cac-cacf-f200-63fea20fb333",
+			"headers": "",
+			"url": "{{base-url}}/v1/hello/MBUSA",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Response status is OK\"] = responseCode.code === 200;\n\ntests[\"Body contains greeting\"] = responseBody.has(\"Hello\");\n\ntests[\"Body contains name\"] = responseBody.has(\"MBUSA\");\n\ntests[\"Content-Type header is present\"] = postman.getResponseHeader(\"Content-Type\");\n\ntests[\"Content-Type is text/plain\"] = postman.getResponseHeader(\"Content-Type\").has(\"text/plain\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486384742930,
+			"name": "Say hello",
+			"description": "",
+			"collectionId": "b100846c-a3c4-24c6-8ba9-30a85fea2a22",
+			"responses": []
+		}
+	]
+}
